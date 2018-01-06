@@ -1,9 +1,7 @@
 import React from 'react'
 import universal from 'react-universal-component'
 
-const HomeTab = universal(import('./Home'))
-const FooTab = universal(import('./Foo'))
-const BarTab = () => <div>Bar</div>;
+const UniversalTab = universal(({tab}) => import(`./${tab}`))
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,12 +12,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        { this.state.selected === 'Home' &&
-          <HomeTab /> }
-        { this.state.selected === 'Foo' &&
-          <FooTab /> }
-        { this.state.selected === 'Bar' &&
-          <BarTab /> }
+        <UniversalTab tab={this.state.selected} />
 
         <button onClick={ () => this.setState({ selected: 'Home' }) }>
           Home

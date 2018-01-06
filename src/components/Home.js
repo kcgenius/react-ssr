@@ -1,3 +1,3 @@
 import React from 'react'
 
-export default () => <div className="Bar">Home is loaded</div>
+export default () => <div className="Home">Home is loaded</div>
