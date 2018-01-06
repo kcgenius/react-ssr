@@ -1,7 +1,11 @@
 import React from 'react'
 import universal from 'react-universal-component'
 
-const UniversalTab = universal(({tab}) => import(`./${tab}`))
+const UniversalTab = universal(({tab}) => import(`./${tab}`),{
+  minDelay: 750,
+  //loading: Loading //component
+  loadingTransition: false
+})
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,7 +16,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <UniversalTab tab={this.state.selected} />
+        <UniversalTab tab={this.state.selected} /*isLoading={true}*/ />
 
         <button onClick={ () => this.setState({ selected: 'Home' }) }>
           Home
