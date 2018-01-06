@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomeTab = () => <div>Home</div>;
+const HomeTab = () => <div>baz</div>;
 const FooTab = () => <div>Foo</div>;
 const BarTab = () => <div>Bar</div>;
 
