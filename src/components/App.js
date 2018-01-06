@@ -1,7 +1,8 @@
 import React from 'react'
+import universal from 'react-universal-component'
 
-const HomeTab = () => <div>baz</div>;
-const FooTab = () => <div>Foo</div>;
+const HomeTab = universal(import('./Home'))
+const FooTab = universal(import('./Foo'))
 const BarTab = () => <div>Bar</div>;
 
 export default class App extends React.Component {
